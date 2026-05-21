@@ -39,4 +39,5 @@
  */
 dependencies {
     implementation(rfg.deobf("curse.maven:immersive-engineering-231951:2974106"))
+    shadowImplementation("com.fasterxml.jackson.core:jackson-databind:2.21.3")
 }
