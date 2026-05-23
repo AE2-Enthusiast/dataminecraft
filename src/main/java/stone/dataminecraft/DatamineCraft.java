@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import stone.dataminecraft.command.DumpCommand;
 import stone.dataminecraft.miner.ImmersiveEngineeringMiner;
+import stone.dataminecraft.miner.MinecraftForgeMiner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,6 +32,7 @@ public class DatamineCraft {
         // register to the event bus so that we can listen to events
         MinecraftForge.EVENT_BUS.register(this);
         LOGGER.info("I am " + Tags.MODNAME + " + at version " + Tags.VERSION);
+        DumpCommand.registerMiner("minecraftforge", new MinecraftForgeMiner());
         if (Loader.isModLoaded("immersiveengineering"))
             DumpCommand.registerMiner("immersiveengineering", new ImmersiveEngineeringMiner());
     }
